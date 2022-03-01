@@ -1,0 +1,94 @@
+<nav class="navbar navbar-expand-xl navbar-light bg-primary fixed-top" id="header">
+    <div class="container">
+        <a class="navbar-brand p-0 m-0">
+            <h2 class="m-0 text-white"><b>SKY TASK </b></h2>
+        </a>
+</div>
+</nav>
+<div class="headerbottom">
+    <div class="container mt-3" >
+         <h1 >API 1 New York Times</h1>
+    </div>
+    <div class="container bg-white px-4 mb-5 px-md-5">
+       
+        <div class="row pt-2 pb-3 border-bottom-highlight">
+           <div class="col-md-12 col-xl-8">
+            <form [formGroup]="ClassifficationSaveForm">
+                <fieldset>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-5 col-xl-5">
+                           <div class="mb-3">
+                              <label for="disabledSelect" class="form-label">Year</label>
+                              <div class="input-group">
+                                  
+                                <ng-select id="yearSelect"  formControlName="yearSelect" class="form-control form-select" [items]="yearlist"   bindLabel="year" bindValue="year" [multiple]=false placeholder="Select Year" [searchable]=true [clearable]=true dropdownPosition="bottom" [clearOnBackspace]=true
+                                [ngClass]="{ 'is-invalid': submitted && f.yearSelect.errors }"
+                                >
+                               </ng-select>
+                               <div *ngIf="submitted && f.yearSelect.errors" class="invalid-feedback">
+                                <div *ngIf="f.yearSelect.errors.required">Classiffication Name is required</div>
+                                </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-sm-12 col-md-5 col-xl-5">
+                           <div class="mb-3">     
+                              <label for="disabledSelect" class="form-label">Month</label>
+                              <div class="input-group">
+                                
+                                <ng-select id="monthSelect"  formControlName="monthSelect" class="form-control form-select" [items]="monthlist"   bindLabel="month" bindValue="month" [multiple]=false placeholder="Select Year" [searchable]=true [clearable]=true dropdownPosition="bottom" [clearOnBackspace]=true
+                                [ngClass]="{ 'is-invalid': submitted && f.monthSelect.errors }"
+                                >
+                               </ng-select>
+                               <div *ngIf="submitted && f.monthSelect.errors" class="invalid-feedback">
+                                <div *ngIf="f.monthSelect.errors.required">Classiffication Name is required</div>
+                                </div>
+                                <button class="btn btn-b-icon border-0 mt-1 mr-2" (click)="AddToGrid()"  [disabled]="disableshowbutton">
+                                    <i class="fa" [ngClass]="{'fa-spin fa-spinner': disableshowbutton}"></i> {{showbutton}}
+                                </button>
+
+
+                              </div>
+
+                           </div>
+                        </div>
+                     </div>
+                   </fieldset>
+              </form>
+           </div>
+           <div class="container mt-3">
+            <div  style='overflow:scroll;'>
+                <div class="table-responsive sale-panel">
+                    <table class="table table-bordered ">
+                       <thead>
+                          <tr>
+                             <th scope="col">Section Name</th>
+                             <th scope='col'>Type</th>
+                             <th scope="col">Snippet</th>
+                            
+                          </tr>
+                       </thead>
+                       <tbody>
+                          <tr *ngFor="let item of viewData">
+                             <th scope="row">{{item.section_name}} </th>
+                             <td scope="row">{{item.type_of_material}}</td>
+                             <td class="text-primary fw-bold">{{item.snippet}}</td>
+                           
+                            
+                          </tr>
+                         
+                       </tbody>
+                    </table>
+                 </div>
+                 </div>
+           </div>
+           
+           </div>
+           </div>
+         
+
+
+</div>
+  
+
+
