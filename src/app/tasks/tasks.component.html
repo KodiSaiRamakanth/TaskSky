@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-xl navbar-light bg-primary fixed-top" id="header">
     <div class="container">
         <a class="navbar-brand p-0 m-0">
-            <h2 class="m-0 text-white"><b>SKY TASK </b></h2>
+            <h2 class="m-0 text-white"><b>Sketch brahma Technologies TASK </b></h2>
         </a>
 </div>
 </nav>
@@ -26,7 +26,7 @@
                                 >
                                </ng-select>
                                <div *ngIf="submitted && f.yearSelect.errors" class="invalid-feedback">
-                                <div *ngIf="f.yearSelect.errors.required">Classiffication Name is required</div>
+                                <div *ngIf="f.yearSelect.errors.required">Year is required</div>
                                 </div>
                               </div>
                            </div>
@@ -41,7 +41,7 @@
                                 >
                                </ng-select>
                                <div *ngIf="submitted && f.monthSelect.errors" class="invalid-feedback">
-                                <div *ngIf="f.monthSelect.errors.required">Classiffication Name is required</div>
+                                <div *ngIf="f.monthSelect.errors.required">Month is required</div>
                                 </div>
                                 <button class="btn btn-b-icon border-0 mt-1 mr-2" (click)="AddToGrid()"  [disabled]="disableshowbutton">
                                     <i class="fa" [ngClass]="{'fa-spin fa-spinner': disableshowbutton}"></i> {{showbutton}}
