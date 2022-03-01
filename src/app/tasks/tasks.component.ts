@@ -53,11 +53,11 @@ export class TasksComponent implements OnInit {
     debugger
     this.viewData =[];
     this.submitted = true;
-    this.showbutton="Processing";
-    this.disableshowbutton=true;
+    
 
     if(this.ClassifficationSaveForm.valid){
-
+      this.showbutton="Processing";
+      this.disableshowbutton=true;
       let sendData = this.ClassifficationSaveForm.controls.yearSelect.value+"/"+this.ClassifficationSaveForm.controls.monthSelect.value;
 
       let response:any=[];
@@ -70,7 +70,11 @@ export class TasksComponent implements OnInit {
         this.showbutton="Show";
         this.disableshowbutton=false;
       });
-    }    
+    } else{
+      this.showbutton="Show";
+      this.disableshowbutton=false;
+
+    }   
     
     
    
